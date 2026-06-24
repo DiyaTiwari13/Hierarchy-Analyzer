@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchy Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌳 Hierarchy Analyzer</h1>
+            <p>Enter node relationships to analyze hierarchical structures</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <label for="dataInput">Enter Node Relationships:</label>
+                <textarea 
+                    id="dataInput" 
+                    placeholder='Example: ["A->B", "A->C", "B->D"]'
+                    rows="5"
+                >["A->B", "A->C", "B->D", "C->E", "E->F", "X->Y", "Y->Z", "Z->X", "P->Q", "Q->R", "G->H", "G->I", "hello", "1->2", "A->"]</textarea>
+                <div class="input-help">
+                    💡 Each entry should be in format: <strong>X->Y</strong> where X and Y are single uppercase letters
+                </div>
+            </div>
+
+            <button id="submitBtn" onclick="analyzeData()">
+                🔍 Analyze
+            </button>
+        </section>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing hierarchy...</p>
+        </div>
+
+        <section id="results" class="results-section" style="display: none;">
+            <div class="results-header">
+                <h2>📊 Analysis Results</h2>
+                <button onclick="clearResults()" class="clear-btn">✕ Clear</button>
+            </div>
+
+            <div id="summaryCards" class="summary-cards"></div>
+
+            <div id="hierarchiesContainer" class="hierarchies-container"></div>
+
+            <div id="invalidContainer" class="invalid-container"></div>
+
+            <div id="duplicateContainer" class="duplicate-container"></div>
+        </section>
+
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
