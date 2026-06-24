@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/bfhl';
+const API_URL = 'https://hierarchy-analyzer-ai.onrender.com';
 
 async function analyzeData() {
     const inputElement = document.getElementById('dataInput');
